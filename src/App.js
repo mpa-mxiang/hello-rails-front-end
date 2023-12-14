@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Greeting from './components/Greeting';
 
 const Home = () => (
@@ -25,8 +25,10 @@ const App = () => (
 
       <hr />
 
-      <Route exact path="/" component={Home} />
-      <Route path="/greeting" component={Greeting} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/greeting" element={<Greeting />} />
+      </Routes>
     </div>
   </Router>
 );
