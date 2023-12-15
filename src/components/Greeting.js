@@ -1,3 +1,4 @@
+// components/Greeting.js
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRandomGreeting } from '../actions';
@@ -13,7 +14,11 @@ const Greeting = () => {
   return (
     <div>
       <h2>Random Greeting</h2>
-      {greeting && <p>{greeting}</p>}
+      {greeting === undefined ? (
+        <p>Loading...</p>
+      ) : (
+        <p>{greeting || 'No greeting available.'}</p>
+      )}
     </div>
   );
 };
